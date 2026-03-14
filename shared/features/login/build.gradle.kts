@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.composeMultiplatform)
+    alias(libs.plugins.composeCompiler)
 }
 
 kotlin {
@@ -20,19 +23,24 @@ kotlin {
         commonMain.dependencies {
             implementation(projects.shared.foundation.network)
             implementation(projects.shared.foundation.database)
-            implementation(projects.shared.features.login)
-            implementation(projects.shared.features.dashboard)
-            implementation(projects.shared.features.compatibility)
             implementation(libs.koin.core)
+            implementation(libs.koin.compose.viewmodel)
+            implementation(libs.ktor.client.core)
+            implementation(libs.androidx.lifecycle.viewmodelCompose)
+            implementation(libs.androidx.lifecycle.runtimeCompose)
         }
         androidMain.dependencies {
-            implementation(libs.koin.android)
+            implementation(libs.androidx.credentials)
+            implementation(libs.androidx.credentials.play.services)
+            implementation(libs.googleid)
+            implementation(libs.androidx.navigation.compose)
+            implementation(libs.koin.compose)
         }
     }
 }
 
 android {
-    namespace = "com.jewel.cosmicapp.shared.app"
+    namespace = "com.jewel.cosmicapp.shared.features.login"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()

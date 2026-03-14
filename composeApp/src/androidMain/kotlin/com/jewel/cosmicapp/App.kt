@@ -9,10 +9,10 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.jewel.cosmicapp.shared.features.auth.presentation.AuthNavigation
-import com.jewel.cosmicapp.shared.features.auth.presentation.AuthRoutes
-import com.jewel.cosmicapp.shared.features.auth.presentation.authGraph
-import com.jewel.cosmicapp.ui.auth.AuthScreen
+import com.jewel.cosmicapp.shared.features.login.presentation.LoginNavigation
+import com.jewel.cosmicapp.shared.features.login.presentation.LoginRoutes
+import com.jewel.cosmicapp.shared.features.login.presentation.loginGraph
+import com.jewel.cosmicapp.ui.login.LoginScreen
 
 @Composable
 fun App() {
@@ -25,14 +25,14 @@ fun App() {
         ) {
             NavHost(
                 navController = navController,
-                startDestination = AuthRoutes.AUTH_MAIN
+                startDestination = LoginRoutes.LOGIN_MAIN
             ) {
-                authGraph {
-                    AuthScreen(
-                        navigation = object : AuthNavigation {
+                loginGraph {
+                    LoginScreen(
+                        navigation = object : LoginNavigation {
                             override fun onLoginSuccess() {
                                 navController.navigate("home") {
-                                    popUpTo(AuthRoutes.AUTH_MAIN) { inclusive = true }
+                                    popUpTo(LoginRoutes.LOGIN_MAIN) { inclusive = true }
                                 }
                             }
 
@@ -43,11 +43,11 @@ fun App() {
                     )
                 }
 
-//                composable("home") {
-//                    Surface(modifier = Modifier.fillMaxSize()) {
-//                        Text("Welcome to Home Screen!")
-//                    }
-//                }
+                composable("home") {
+                    Surface(modifier = Modifier.fillMaxSize()) {
+                        Text("Welcome to Home Screen!")
+                    }
+                }
             }
         }
     }

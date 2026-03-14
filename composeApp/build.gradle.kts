@@ -22,7 +22,7 @@ kotlin {
         }
         commonMain.dependencies {
             implementation(projects.shared.app)
-            implementation(projects.shared.features.auth)
+            implementation(projects.shared.features.login)
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)
             implementation(libs.compose.material3)

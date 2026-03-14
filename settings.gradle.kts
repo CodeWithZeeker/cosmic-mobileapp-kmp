@@ -35,7 +35,7 @@ include(":shared:foundation:network")
 include(":shared:foundation:database")
 
 // Feature Modules
-include(":shared:features:auth")
+include(":shared:features:login")
 include(":shared:features:dashboard")
 include(":shared:features:compatibility")
 
