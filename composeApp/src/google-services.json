@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "928106305774",
+    "project_id": "datingapp-735d1",
+    "storage_bucket": "datingapp-735d1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928106305774:android:58aa7433e66b3fa33dfbff",
+        "android_client_info": {
+          "package_name": "com.jewel.jewelapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6kn_xxfMb7U9MhKfBGXELFNeICBQ8L2o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

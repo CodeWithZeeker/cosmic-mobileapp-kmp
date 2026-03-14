@@ -23,6 +23,10 @@ kotlin {
             implementation(projects.shared.features.auth)
             implementation(projects.shared.features.dashboard)
             implementation(projects.shared.features.compatibility)
+            implementation(libs.koin.core)
+        }
+        androidMain.dependencies {
+            implementation(libs.koin.android)
         }
     }
 }

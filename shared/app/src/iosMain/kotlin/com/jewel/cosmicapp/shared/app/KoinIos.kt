@@ -1,0 +1,28 @@
+package com.jewel.cosmicapp.shared.app
+
+import com.jewel.cosmicapp.shared.app.di.appModule
+import com.jewel.cosmicapp.shared.features.auth.domain.AuthProvider
+import com.jewel.cosmicapp.shared.features.auth.domain.IosAuthProvider
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.get
+import org.koin.core.context.startKoin
+import org.koin.dsl.module
+
+fun initKoinIos() {
+    startKoin {
+        modules(
+            appModule,
+            module {
+                single<AuthProvider> { IosAuthProvider() }
+            }
+        )
+    }
+}
+
+/**
+ * A helper class to retrieve Koin dependencies from Swift.
+ */
+object KoinHelper : KoinComponent {
+    fun getAuthProvider(): AuthProvider = get()
+    // Add other dependencies needed by Swift here
+}
