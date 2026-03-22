@@ -7,12 +7,25 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:928106305774:android:58aa7433e66b3fa33dfbff",
+        "mobilesdk_app_id": "1:928106305774:android:4a7b73e6f29dba743dfbff",
         "android_client_info": {
-          "package_name": "com.jewel.jewelapp"
+          "package_name": "com.jewel.cosmicapp"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "928106305774-cscj1a8eqbap17nedbqvnonb9kibbvfg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jewel.cosmicapp",
+            "certificate_hash": "90b7b297a9ccb5bbeaeb7009a9f9f764e49b40e6"
+          }
+        },
+        {
+          "client_id": "928106305774-tan6ink6641k78v39tfm1jp1hivotpt3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyB6kn_xxfMb7U9MhKfBGXELFNeICBQ8L2o"
@@ -20,7 +33,55 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "928106305774-tan6ink6641k78v39tfm1jp1hivotpt3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "928106305774-jm8ohmf2nbnbhf3gctogl5lh0lgdt0pn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.instamobile.dating.swift"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928106305774:android:58aa7433e66b3fa33dfbff",
+        "android_client_info": {
+          "package_name": "com.jewel.jewelapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "928106305774-tan6ink6641k78v39tfm1jp1hivotpt3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6kn_xxfMb7U9MhKfBGXELFNeICBQ8L2o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "928106305774-tan6ink6641k78v39tfm1jp1hivotpt3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "928106305774-jm8ohmf2nbnbhf3gctogl5lh0lgdt0pn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.instamobile.dating.swift"
+              }
+            }
+          ]
         }
       }
     }

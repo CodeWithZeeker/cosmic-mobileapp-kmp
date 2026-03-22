@@ -15,7 +15,7 @@ class AndroidLoginProvider(private val context: Context) : LoginProvider {
 
             val googleIdOption = GetGoogleIdOption.Builder()
                 .setFilterByAuthorizedAccounts(false)
-                .setServerClientId("YOUR_WEB_CLIENT_ID") // Replace with actual client ID
+            .setServerClientId("928106305774-tan6ink6641k78v39tfm1jp1hivotpt3.apps.googleusercontent.com") // Replace with actual client ID
                 .setNonce(nonce)
                 .build()
 

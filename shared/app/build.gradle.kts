@@ -1,44 +1,41 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.androidKotlinMultiplatformLibrary)
+    alias(libs.plugins.skie)
 }
 
 kotlin {
-    androidTarget {
-        compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
-        }
+    androidLibrary {
+        namespace = "com.jewel.cosmicapp.shared.app"
+        compileSdk = libs.versions.android.compileSdk.get().toInt()
+        minSdk = libs.versions.android.minSdk.get().toInt()
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
         iosSimulatorArm64()
-    )
+    ).forEach {
+        it.binaries.framework {
+            baseName = "Shared"
+            isStatic = true
+            export(projects.shared.features.login)
+            export(projects.shared.foundation.network)
+        }
+    }
 
     sourceSets {
         commonMain.dependencies {
-            implementation(projects.shared.foundation.network)
-            implementation(projects.shared.foundation.database)
-            implementation(projects.shared.features.login)
-            implementation(projects.shared.features.dashboard)
-            implementation(projects.shared.features.compatibility)
+            api(projects.shared.foundation.network)
+            api(projects.shared.foundation.database)
+            api(projects.shared.features.login)
+            api(projects.shared.features.dashboard)
+            api(projects.shared.features.compatibility)
             implementation(libs.koin.core)
         }
+        
         androidMain.dependencies {
             implementation(libs.koin.android)
         }
-    }
-}
-
-android {
-    namespace = "com.jewel.cosmicapp.shared.app"
-    compileSdk = libs.versions.android.compileSdk.get().toInt()
-    defaultConfig {
-        minSdk = libs.versions.android.minSdk.get().toInt()
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
     }
 }
